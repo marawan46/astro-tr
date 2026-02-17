@@ -6,6 +6,12 @@ backend:
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
+
+i18n:
+  structure: multiple_folders
+  locales: [en, ar]
+  default_locale: en
+
 collections:
 
   # =========================
@@ -38,36 +44,25 @@ collections:
   # SERVICES SECTION
   # =========================
 
-  - name: "services_en"
-    label: "Services (English)"
+  - name: "services"
+    label: "Services"
+    folder: "src/content"
+    create: false
+    i18n: true
     files:
-      - file: "src/content/en/services.json"
-        label: "Services EN"
-        name: "services_en"
+      - name: "services"
+        label: "Services Section"
+        file: "services.json"
+        i18n: true
         fields:
-          - { label: "Section Title", name: "title", widget: "string" }
+          - { label: "Section Title", name: "title", widget: "string", i18n: true }
           - label: "Services List"
             name: "items"
             widget: "list"
+            i18n: true
             fields:
-              - { label: "Service Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-
-  - name: "services_ar"
-    label: "Services (Arabic)"
-    files:
-      - file: "src/content/ar/services.json"
-        label: "Services AR"
-        name: "services_ar"
-        fields:
-          - { label: "Section Title", name: "title", widget: "string" }
-          - label: "Services List"
-            name: "items"
-            widget: "list"
-            fields:
-              - { label: "Service Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-
+              - { label: "Service Title", name: "title", widget: "string", i18n: true }
+              - { label: "Description", name: "description", widget: "text", i18n: true }
   # =========================
   # CONSULTATION SECTION
   # =========================
