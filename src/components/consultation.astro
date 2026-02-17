@@ -1,0 +1,47 @@
+---
+const { lang } = Astro.props as Props;
+interface Props {
+  lang: "en" | "ar";
+}
+const content = {
+  en: {
+    title: "Reserve a Consultation Meeting",
+    name: "Your Name",
+    phone: "Phone Number",
+    button: "Submit Request",
+  },
+  ar: {
+    title: "احجز اجتماع استشاري",
+    name: "الاسم",
+    phone: "رقم الهاتف",
+    button: "إرسال الطلب",
+  },
+};
+---
+
+<section id="consultation" class="py-20 bg-gray-900 text-white">
+  <div class="max-w-xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-8">
+      {content[lang].title}
+    </h2>
+
+    <form class="space-y-4">
+      <input
+        type="text"
+        placeholder={content[lang].name}
+        class="w-full p-3 rounded-lg text-black"
+      />
+      <input
+        type="tel"
+        placeholder={content[lang].phone}
+        class="w-full p-3 rounded-lg text-black"
+      />
+      <button
+        type="submit"
+        class="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-lg font-semibold w-full transition"
+      >
+        {content[lang].button}
+      </button>
+    </form>
+  </div>
+</section>

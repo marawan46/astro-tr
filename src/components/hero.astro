@@ -1,0 +1,49 @@
+---
+interface HeroContent {
+  title: string;
+  subtitle: string;
+  buttonText: string;
+}
+
+interface Props {
+  lang: "en" | "ar";
+}
+
+const { lang } = Astro.props as Props;
+
+const content: Record<"en" | "ar", HeroContent> = {
+  en: {
+    title: "Building Excellence With Precision",
+    subtitle: "Professional construction solutions delivered on time and within budget.",
+    buttonText: "Reserve Consultation",
+  },
+  ar: {
+    title: "نبني التميز بدقة",
+    subtitle: "حلول مقاولات احترافية تُسلم في الوقت المحدد وضمن الميزانية.",
+    buttonText: "احجز استشارة",
+  },
+};
+
+const data = content[lang];
+---
+
+<section class="relative bg-gray-900 text-white py-24">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+      {data.title}
+    </h1>
+
+    <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+      {data.subtitle}
+    </p>
+
+    <a
+      href="#consultation"
+      class="inline-block bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-3 rounded-xl font-semibold transition duration-300"
+    >
+      {data.buttonText}
+    </a>
+
+  </div>
+</section>
