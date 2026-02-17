@@ -13,80 +13,18 @@ i18n:
   default_locale: en
 
 collections:
-
-  # =========================
-  # HERO SECTION
-  # =========================
-
-  - name: "hero_en"
-    label: "Hero (English)"
-    files:
-      - file: "src/content/en/hero.json"
-        label: "Hero EN"
-        name: "hero_en"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Subtitle", name: "subtitle", widget: "text" }
-          - { label: "Button Text", name: "buttonText", widget: "string" }
-
-  - name: "hero_ar"
-    label: "Hero (Arabic)"
-    files:
-      - file: "src/content/ar/hero.json"
-        label: "Hero AR"
-        name: "hero_ar"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Subtitle", name: "subtitle", widget: "text" }
-          - { label: "Button Text", name: "buttonText", widget: "string" }
-
-  # =========================
-  # SERVICES SECTION
-  # =========================
-
   - name: "services"
     label: "Services"
-    folder: "src/content"
+    folder: "src/content/services"
     create: false
     i18n: true
-    files:
-      - name: "services"
-        label: "Services Section"
-        file: "services.json"
+    extension: "json"
+    fields:
+      - { label: "Section Title", name: "title", widget: "string", i18n: true }
+      - label: "Services List"
+        name: "items"
+        widget: "list"
         i18n: true
         fields:
-          - { label: "Section Title", name: "title", widget: "string", i18n: true }
-          - label: "Services List"
-            name: "items"
-            widget: "list"
-            i18n: true
-            fields:
-              - { label: "Service Title", name: "title", widget: "string", i18n: true }
-              - { label: "Description", name: "description", widget: "text", i18n: true }
-  # =========================
-  # CONSULTATION SECTION
-  # =========================
-
-  - name: "consultation_en"
-    label: "Consultation (English)"
-    files:
-      - file: "src/content/en/consultation.json"
-        label: "Consultation EN"
-        name: "consultation_en"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Name Placeholder", name: "namePlaceholder", widget: "string" }
-          - { label: "Phone Placeholder", name: "phonePlaceholder", widget: "string" }
-          - { label: "Button Text", name: "buttonText", widget: "string" }
-
-  - name: "consultation_ar"
-    label: "Consultation (Arabic)"
-    files:
-      - file: "src/content/ar/consultation.json"
-        label: "Consultation AR"
-        name: "consultation_ar"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Name Placeholder", name: "namePlaceholder", widget: "string" }
-          - { label: "Phone Placeholder", name: "phonePlaceholder", widget: "string" }
-          - { label: "Button Text", name: "buttonText", widget: "string" }
+          - { label: "Service Title", name: "title", widget: "string", i18n: true }
+          - { label: "Description", name: "description", widget: "text", i18n: true }
